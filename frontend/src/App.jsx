@@ -48,7 +48,6 @@ const DashboardSection = () => {
     setFilteredData(null);
   };
 
-  // Use filtered data if available, otherwise use context data
   const displayExpenses = filteredData ? filteredData.expenses : expenses;
   const displayIncomes = filteredData ? filteredData.incomes : incomes;
   const displayCategoryTotals = filteredData ? filteredData.expenseCategoryTotals : null;
@@ -175,9 +174,9 @@ const App = () => {
             <button
               onClick={() => {
                 if (window.innerWidth < 640) {
-                  setActiveSection("mobileMenu"); // Mobile: show cards menu
+                  setActiveSection("mobileMenu"); 
                 } else {
-                  setActiveSection("dashboard"); // Desktop: go straight to dashboard
+                  setActiveSection("dashboard"); 
                 }
               }}
               className="mt-6 px-6 py-3 bg-gradient-to-tl from-[#F598C0] to-[#72AFED] text-white rounded font-bold hover:bg-gradient-to-br hover:from-[#F598C0] hover:to-[#72AFED] cursor-pointer transition duration-500 focus:outline-none"
@@ -250,7 +249,6 @@ const App = () => {
                 try {
                   await refetchExpenses();
                 } catch (e) {
-                  // ignore errors here; toast handling is inside lower layers
                   console.error(e);
                 }
               }}

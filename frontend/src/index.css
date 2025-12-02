@@ -6,7 +6,6 @@ body{
     font-family: 'Nunito', sans-serif;
 }
 
-/* Target the input */
 .react-datepicker__input-container
 input{
     border: 2px solid #1D6E91;
@@ -14,7 +13,6 @@ input{
     padding: 0.5rem;
 }
 
-/* Target the calendar popup */
 .my-calendar {
     border: 2px solid #3F5EFB;
     background-color: #FC466B;
