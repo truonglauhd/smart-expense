@@ -1,0 +1,70 @@
+@import "tailwindcss";
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+}
+
+/* Target the input */
+.react-datepicker__input-container
+input{
+    border: 2px solid #1D6E91;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+}
+
+/* Target the calendar popup */
+.my-calendar {
+    border: 2px solid #3F5EFB;
+    background-color: #FC466B;
+}
+
+.my-calendar .react-datepicker__day--selected{
+    background-color: #EEAECA;
+    color: #FD1D1D;
+}
+
+.my-calendar .react-datepicker__day:hover {
+    background-color: #FCB045;
+}
+
+.scrollbar::-webkit-scrollbar{
+    width: 6px;
+    height: 8px;
+}
+
+.scrollbar::-webkit-scrollbar-track{
+    background: white;
+    border-radius: 9999px;
+    border: 2px solid transparent;
+}
+
+.scrollbar::-webkit-scrollbar-thumb:hover{
+    background: #1D6E91;
+    border-radius: 9999px;
+}
+
+.scrollbar::-webkit-scrollbar-thumb{
+    background-color: #a2a3a3;
+    border-radius: 9999px;
+}
+
+html::-webkit-scrollbar{
+    width: 8px;
+}
+
+html::-webkit-scrollbar-track{
+    background: #e6e4e4;
+    border-radius: 9999px;
+}
+
+html::-webkit-scrollbar-thumb{
+    background: #a7a7a8;
+    border-radius: 9999px;
+}
+
+html::-webkit-scrollbar-thumb:hover{
+    background:rgb(152, 153, 153);
+    border-radius: 9999px;
+}
