@@ -20,7 +20,6 @@ const Transactions = ({ expenses: propExpenses, incomes: propIncomes }) => {
   const expenses = propExpenses !== undefined ? propExpenses : contextExpenses;
   const incomes = propIncomes !== undefined ? propIncomes : contextIncomes;
 
-  // Combine & sort by date descending (memoized)
   const combined = useMemo(() => {
     const list = [
       ...(incomes || []).map((item) => ({ ...item, type: "Income" })),

@@ -7,7 +7,6 @@ import "react-datepicker/dist/react-datepicker.css";
 import { apiExtractBill } from "../services/api";
 
 const AddExpenseForm = ({ setActiveSection }) => {
-  // from context: editing state + API actions
   const {
     editingExpense,
     setEditingExpense,
@@ -22,7 +21,6 @@ const AddExpenseForm = ({ setActiveSection }) => {
   const [isUploading, setIsUploading] = useState(false);
   const fileInputRef = useRef(null);
 
-  // Fill form when editing, clear when not
   useEffect(() => {
     if (editingExpense) {
       setAmount(editingExpense.amount);
@@ -45,7 +43,7 @@ const AddExpenseForm = ({ setActiveSection }) => {
     const payload = {
       amount: parseFloat(amount),
       category,
-      date: new Date(date).toISOString().split("T")[0], // "YYYY-MM-DD"
+      date: new Date(date).toISOString().split("T")[0], 
       note,
     };
 
@@ -59,7 +57,6 @@ const AddExpenseForm = ({ setActiveSection }) => {
         toast.success("Expense added!");
       }
 
-      // reset form
       setAmount("");
       setCategory("");
       setNote("");

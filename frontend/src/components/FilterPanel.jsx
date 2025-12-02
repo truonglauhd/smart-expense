@@ -7,17 +7,15 @@ const FilterPanel = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
 
-    // If preset range, split it into min/max
     if (name === "amountRange") {
       const [min, max] = value.split("-");
       setFilters((prev) => ({
         ...prev,
-        amountRange: value, // keep selected value
+        amountRange: value,
         minAmount: min || "",
         maxAmount: max === "+" ? "" : max || "",
       }));
     } else {
-      // Category, startDate, endDate, etc.
       setFilters((prev) => ({
         ...prev,
         [name]: value,
@@ -66,7 +64,7 @@ const FilterPanel = () => {
           </label>
           <select
             name="amountRange"
-            value={filters.amountRange || ""}  // <- safe default
+            value={filters.amountRange || ""}  
             onChange={handleChange}
             className="text-sm text-gray-400 rounded font-semibold border-2 border-gray-400 focus:border-gray-400 focus:outline-none cursor-pointer"
           >

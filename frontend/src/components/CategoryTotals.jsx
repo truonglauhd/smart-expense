@@ -7,9 +7,7 @@ const CategoryTotals = ({ expenses: propExpenses, categoryTotals: propCategoryTo
 
   const categories = ["Food", "Travel", "Bills", "Others"];
 
-  // Calculate total for each category
-  // If categoryTotals prop is provided (from filtered API), use it; otherwise calculate from expenses
-  const totals = propCategoryTotals
+    const totals = propCategoryTotals
     ? categories.map((cat) => ({
         category: cat,
         total: propCategoryTotals[cat] || 0,

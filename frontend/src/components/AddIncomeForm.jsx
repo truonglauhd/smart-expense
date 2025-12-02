@@ -6,17 +6,14 @@ import "react-datepicker/dist/react-datepicker.css";
 import { ArrowUturnLeftIcon } from "@heroicons/react/24/solid";
 
 const AddIncomeForm = ({ setActiveSection }) => {
-  // pull only what's needed from context
   const { editingIncome, setEditingIncome, addIncome, updateIncome } =
     useContext(ExpenseContext);
 
-  // Local form state
   const [amount, setAmount] = useState("");
   const [date, setDate] = useState(new Date());
   const [note, setNote] = useState("");
   const [category, setCategory] = useState("wage");
 
-  // When editingIncome changes, prefill/clear the form
   useEffect(() => {
     if (editingIncome) {
       setAmount(editingIncome.amount);
@@ -46,7 +43,7 @@ const AddIncomeForm = ({ setActiveSection }) => {
     const payload = {
       amount: parseFloat(amount),
       category,
-      date: new Date(date).toISOString().split("T")[0], // YYYY-MM-DD
+      date: new Date(date).toISOString().split("T")[0], 
       note,
     };
 
@@ -60,7 +57,6 @@ const AddIncomeForm = ({ setActiveSection }) => {
         toast.success("Income added!");
       }
 
-      // reset form
       setAmount("");
       setDate(new Date());
       setNote("");

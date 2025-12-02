@@ -22,13 +22,13 @@ const IncomeList = () => {
   const {
     incomes,
     setEditingIncome,
-    deleteIncome, // <-- backend action from context
+    deleteIncome, 
     incomeFilters,
   } = useContext(ExpenseContext);
 
   const handleDelete = async (id) => {
     try {
-      await deleteIncome(id); // updates state after API success
+      await deleteIncome(id); 
       toast.info("Income deleted!");
     } catch (e) {
       console.error(e);
@@ -36,7 +36,6 @@ const IncomeList = () => {
     }
   };
 
-  // Filter + sort incomes (memoized)
   const filteredIncomes = useMemo(() => {
     const list = (incomes || []).filter((income) => {
       const amount = Number(income.amount);

@@ -28,7 +28,7 @@ const ExpenseList = () => {
 
   const handleDelete = async (id) => {
     try {
-      await deleteExpense(id); // updates state internally after API success
+      await deleteExpense(id); 
       toast.success("Expense deleted!");
     } catch (e) {
       console.error(e);
@@ -36,7 +36,6 @@ const ExpenseList = () => {
     }
   };
 
-  // Filter + sort (memoized for performance)
   const filteredExpenses = useMemo(() => {
     const list = (expenses || []).filter((exp) => {
       const expAmount = Number(exp.amount);

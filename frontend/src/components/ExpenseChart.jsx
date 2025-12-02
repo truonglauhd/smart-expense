@@ -11,7 +11,6 @@ import {
 import Lottie from "lottie-react";
 import ExpenseChartEmpty from "../assets/animations/ExpenseChartEmpty.json";
 
-// Stable color per category
 const CATEGORY_COLORS = {
   Food:   "#090979",
   Travel: "#0B8A40",
@@ -24,7 +23,6 @@ const ExpenseChart = ({ expenses: propExpenses }) => {
   const { expenses: contextExpenses } = useContext(ExpenseContext);
   const expenses = propExpenses !== undefined ? propExpenses : contextExpenses;
 
-  // Group by category with stable ordering
   const chartData = useMemo(() => {
     const map = new Map();
     for (const exp of expenses) {
@@ -32,7 +30,6 @@ const ExpenseChart = ({ expenses: propExpenses }) => {
       const val = Number(exp.amount) || 0;
       map.set(name, (map.get(name) || 0) + val);
     }
-    // Return only categories that have > 0 total
     return Array.from(map.entries())
       .map(([name, value]) => ({ name, value }))
       .filter(d => d.value > 0);
